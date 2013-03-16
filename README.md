@@ -23,9 +23,14 @@ At the moment following components and unit tests are available:
 
 ## Quick start
 
-+ Download latest [Twitter Bootstrap](https://github.com/twitter/bootstrap/tags)
-+ Replace [`/js`](https://github.com/twitter/bootstrap/tree/master/js) folder with this Repository's `/js` folder
-+ Load `environment.js` before other components
+- By hand
+
+  + Download latest [Twitter Bootstrap](https://github.com/twitter/bootstrap/tags)
+  + Replace [`/js`](https://github.com/twitter/bootstrap/tree/master/js) folder with this Repository's `/js` folder
+  + Load `environment.js` before other components
+
+- Using `build.php`
+  + open build.php in your browser, which createst bootstrap.js file
 
 
 ## Motivation
