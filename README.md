@@ -6,19 +6,23 @@
 Code style follows [Bootstrap Code guide](https://github.com/mdo/code-guide#javascript-generated%20markup) for easy diffs of origin commits
 
 At the moment following components and unit tests are available:
-- [x] Transitions
-- [ ] Modal
-- [x] Dropdown
-- [x] Scrollspy
-- [x] Tab
-- [ ] Tooltip
-- [ ] Popover
-- [x] Alert
-- [x] Button
-- [ ] Collapse
-- [x] Carousel
-- [ ] Typeahead
-- [x] Affix
+
+| Plugin      | Base prepared | Tested by human | mooboo |
+| ----------- |:-------------:|:---------------:|:------:|
+| Transitions | x             |                 | [x](https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-transition.js) |
+| Modal       |               |                 | [x[(https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-modal.js)      |
+| Dropdown    | x             |                 | [x](https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-dropdown.js)   |
+| ScrollSpy   | x             |                 | [-](https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-scrollspy.js)  |
+| Tab         | x             | x               | [x](https://github.com/darrennolan/mooboo/commit/410490e61459a1f61916ca5050e9ab03785feb95)       |
+| Tooltip     |               |                 | [x](https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-tooltip.js)    |
+| Popover     |               |                 | [x](https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-popover.js)    |
+| Alert       | x             |                 | [x](https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-alert.js)      |
+| Button      | x             |                 | [-](https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-button.js)     |
+| Collapse    |               |                 | [-](https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-collapse.js)   |
+| Carousel    | x             | x               | [-](https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-carousel.js)   |
+| Typeahead   |               |                 | [x](https://github.com/darrennolan/mooboo/commit/1ab9b15279c5b85767415c6436c8aefcf9f12a6b)       |
+| Affix       | x             |                 | -
+|             |               |                 | [togleButtons](https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-togglebuttons.js) |
 
 
 ## Quick start
