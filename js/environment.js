@@ -20,12 +20,16 @@ name: MooTools Bootstrap plugins
 		// @see  http://twitter.github.com/bootstrap/javascript.html
 		var $body = document.id(document.body);
 
-		$body.on = function(namespace){
+		$body.on = function(namespace) {
 			this.store(namespace, true);
+
+			return;
 		}
 
-		$body.off = function(namespace){
+		$body.off = function(namespace) {
 			this.store(namespace, false);
+
+			return;
 		}
 	});
 

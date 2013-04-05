@@ -26,7 +26,8 @@
   /* CSS TRANSITION SUPPORT (http://www.modernizr.com/)
    * ======================================================= */
 
-  Browser.extend('support', {
+    Browser.extend('support', {
+//  Object.merge(Browser, { support: {
 
     transition: (function () {
 
@@ -36,7 +37,7 @@
           , transEndEventNames = {
                'WebkitTransition' : 'webkitTransitionEnd'
             ,  'MozTransition'    : 'transitionend'
-            ,  'OTransition'      : 'oTransitionEnd otransitionend'
+            ,  'OTransition'      : 'otransitionend' // 'oTransitionEnd otransitionend'
             ,  'transition'       : 'transitionend'
             }
           , name
@@ -48,6 +49,10 @@
         }
 
       }())
+
+	  // Add to MooTools NativeEvents
+	  // See https://github.com/mootools/mootools-core/pull/2053
+	  Element.NativeEvents[transitionEnd] = 2
 
       return transitionEnd && {
         end: transitionEnd

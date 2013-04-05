@@ -16,7 +16,7 @@ At the moment following components and unit tests are available:
 - [x] Alert
 - [x] Button
 - [ ] Collapse
-- [ ] Carousel
+- [x] Carousel
 - [ ] Typeahead
 - [x] Affix
 
@@ -30,6 +30,7 @@ At the moment following components and unit tests are available:
   + Load `environment.js` before other components
 
 - Using `build.php`
+
   + open build.php in your browser, which createst bootstrap.js file
 
 

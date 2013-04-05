@@ -158,7 +158,7 @@
   $(document)
     .addEvent('click', clearMenus)
     .addEvent('click:relay(.dropdown form)', function(e) { e && e.stopPropagation() })
-    .addEvent('click', function(e) { e && e.stopPropagation() })
+    .addEvent('click', function(e) { e || e.stopPropagation && e.stopPropagation() })
     .addEvent('click:relay(' + toggle + ')', Dropdown.prototype.toggle)
     .addEvent('keydown:relay(' + toggle + ', [role=menu])', Dropdown.prototype.keydown)
 

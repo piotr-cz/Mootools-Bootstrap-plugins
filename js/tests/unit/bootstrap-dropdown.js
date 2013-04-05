@@ -2,6 +2,34 @@
   // @note: document.body avilable after domready
 //  window.addEvent('domready', function() {
 
+	/**
+	 * @var     Object   Mock Event object
+	 */
+	var testEvent = {
+		preventDefault		: function(){ this.preventedDefault = true },
+		isDefaultPrevented	: function(){ return !!this.preventedDefault },
+		stopPropagation		: function(){}
+	}
+
+	/**
+	 * Helper for testing MooTools deletaged events
+	 *
+	 * @param   String   type
+	 * @param   Element  $target
+	 *
+	 * @return  Element  To allow chaining
+	 */
+	function fireDelegated(type, $target, $base) {
+		if (!$base) {
+			$base = $(document)
+		}
+
+		$base.fireEvent( type, Object.merge({ target: $target }, testEvent));
+
+		return $target;
+	}
+
+
     module("bootstrap-dropdowns")
 
       test("should provide no conflict", function () {
@@ -31,7 +59,7 @@
           + '</ul>'
           + '</li>'
             })
-          , dropdown = $dropdownHTML.getElement('[data-toggle="dropdown"]').dropdown().fireEvent('click', {})
+          , dropdown = $dropdownHTML.getElement('[data-toggle="dropdown"]').dropdown().fireEvent('click', testEvent)
 
         ok(!dropdown.getParent('.dropdown').hasClass('open'), 'open class added on click')
       })
@@ -48,7 +76,7 @@
           + '</ul>'
           + '</li>'
             })
-          , dropdown = $dropdownHTML.getElement('[data-toggle="dropdown"]').dropdown().fireEvent('click')
+          , dropdown = $dropdownHTML.getElement('[data-toggle="dropdown"]').dropdown().fireEvent('click', testEvent)
 
         ok(dropdown.getParent('.dropdown').hasClass('open'), 'open class added on click')
       })
@@ -65,7 +93,7 @@
           + '</ul>'
           + '</li>'
             })
-          , dropdown = $dropdownHTML.getElement('[data-toggle="dropdown"]').dropdown().fireEvent('click')
+          , dropdown = $dropdownHTML.getElement('[data-toggle="dropdown"]').dropdown().fireEvent('click', testEvent)
 
         ok(dropdown.getParent('.dropdown').hasClass('open'), 'open class added on click')
       })
@@ -87,10 +115,10 @@
             .inject('qunit-fixture')
             .getElements('[data-toggle="dropdown"]')
             .dropdown()
-            .fireEvent('click')
+            .fireEvent('click', testEvent)
         ok(dropdown.getParent('.dropdown').every(function($parent){ return $parent.hasClass('open') }), 'open class added on click')
 //      ok(dropdown[0].getParent('.dropdown').hasClass('open'), 'open class added on click')
-		$(document).fireEvent('click', { stopPropagation: function(){} }); // need html, as event has been registered to it
+		$(document).fireEvent('click', testEvent); // need html, as event has been registered to it
         ok(!dropdown.getParent('.dropdown').every(function($parent){ return $parent.hasClass('open') }), 'open class removed')
 //      ok(!dropdown[0].getParent('.dropdown').hasClass('open'), 'open class removed')
         dropdown.destroy()
@@ -119,16 +147,16 @@
 		   , last = Array.from(dropdowns).getLast()
 
 		 ok(dropdowns.length == 2, "Should be two dropdowns")
-		 document.fireEvent('click', { target: first, stopPropagation : function(){} }) // Delegated  `first.fireEvent('click');`
+		 document.fireEvent('click', testEvent) // Delegated  `first.fireEvent('click');`
 		 ok(first.getParents('.open').length == 1, 'open class added on click')
 		 ok($$('#qunit-fixture .open').length == 1, 'only one object is open')
-		 document.fireEvent('click')
+		 document.fireEvent('click', testEvent)
 		 ok($$("#qunit-fixture .open").length === 0, 'open class removed')
 
-		 document.fireEvent('click', { target: last, stopPropagation: function(){} })
+		 document.fireEvent('click', testEvent )
 		 ok(last.getParents('.open').length == 1, 'open class added on click')
 		 ok($$('#qunit-fixture .open').length == 1, 'only one object is open')
-		 document.fireEvent('click')
+		 document.fireEvent('click', testEvent)
 		 ok($$("#qunit-fixture .open").length === 0, 'open class removed')
 
 		 $("qunit-fixture").set('html', "");
