@@ -10,7 +10,7 @@ At the moment following components and unit tests are available:
 | Plugin      | Base prepared | Tested by human | mooboo |
 | ----------- |:-------------:|:---------------:|:------:|
 | Transitions | x             |                 | [x](https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-transition.js) |
-| Modal       |               |                 | [x[(https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-modal.js)      |
+| Modal       |               |                 | [x](https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-modal.js)      |
 | Dropdown    | x             |                 | [x](https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-dropdown.js)   |
 | ScrollSpy   | x             |                 | [-](https://github.com/GPTechnologySolutions/mooboo/blob/development/js/bootstrap-scrollspy.js)  |
 | Tab         | x             | x               | [x](https://github.com/darrennolan/mooboo/commit/410490e61459a1f61916ca5050e9ab03785feb95)       |
@@ -28,13 +28,12 @@ At the moment following components and unit tests are available:
 ## Quick start
 
 - By hand
-
   + Download latest [Twitter Bootstrap](https://github.com/twitter/bootstrap/tags)
   + Replace [`/js`](https://github.com/twitter/bootstrap/tree/master/js) folder with this Repository's `/js` folder
-  + Load `environment.js` before other components
+  + Load `environment.js` before loading other plugins
+
 
 - Using `build.php`
-
   + open build.php in your browser, which createst bootstrap.js file
 
 
