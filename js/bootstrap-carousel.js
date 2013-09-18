@@ -18,6 +18,29 @@
  * ========================================================== */
 
 
+/*
+---
+
+script: bootstrap-carousel.js
+
+name: Bootstrap.Carousel
+
+description: Twitter Bootstrap plugin for cycling through elements like a carousel
+
+license: APLv2
+
+authors:
+  - Twitter
+
+requires:
+  - Core/Element.Delegation
+  - More/Events.Pseudos
+
+provides: [Element.carousel]
+
+...
+*/
+
 !function ($, $$) {
 
   "use strict"; // jshint ;_;
@@ -199,7 +222,7 @@
     $target.carousel(options)
 
     if (slideIndex = $this.get('data-slide-to')) {
-      $target.retrieve('carousel').pause().to(slideIndex).cycle()
+      $target.retrieve('carousel').pause().to(slideIndex).cycle() // Problem: Got Div
     }
 
     e.preventDefault()
