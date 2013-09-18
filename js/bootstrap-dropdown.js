@@ -69,7 +69,7 @@
         , isActive
         , index
 
-      if (!/(38|40|27)/.test(e.keyCode)) return
+      if (!/(38|40|27)/.test(e.key)) return
 
       $this = $(this)
 
@@ -82,7 +82,7 @@
 
       isActive = $parent.hasClass('open')
 
-      if (!isActive || (isActive && e.keyCode == 27)) {
+      if (!isActive || (isActive && e.key == 27)) {
         if (e.which == 27) $parent.getElements(toggle).focus()
         return $this.fireEvent('click')
       }
@@ -94,8 +94,8 @@
       index = $items.indexOf( $parent.getElement('[role=menu] li:not(.divider):visible a:focus'));
 //		items.each(function($item, i){ if ($item.match(':focus')) index = i });
 
-      if (e.keyCode == 38 && index > 0) index--                                        // up
-      if (e.keyCode == 40 && index < $items.length - 1) index++                        // down
+      if (e.key == 38 && index > 0) index--                                        // up
+      if (e.key == 40 && index < $items.length - 1) index++                        // down
       if (!~index) index = 0
 
       $items[index]
